@@ -30,7 +30,7 @@ while(1):
             print(dexText.rstrip("\n") + "\n")
             foundEntry = 1
 
-    speech = gTTS(dexText.replace("\n", " "), lang='en')
+    speech = gTTS((info.json()["name"].capitalize()) + ". " + dexText.replace("\n", " "), lang='en')
     speech.save("dexText.mp3")
     os.system("start dexText.mp3")
 
